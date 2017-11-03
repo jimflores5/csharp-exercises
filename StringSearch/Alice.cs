@@ -2,7 +2,7 @@
 
 namespace StringSearch
 {
-    class Program
+    class Alice
     {
         static void Main(string[] args)
         {
