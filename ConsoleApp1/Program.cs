@@ -48,7 +48,7 @@ namespace SimpleGradeBook
             //Print roster using StringBuilder
             foreach (KeyValuePair<int, string> student in students) 
             {
-                roster.Append(student+"\n");
+                roster.Append(student.Value + " (" + student.Key + ")\n");
             }
             Console.WriteLine(roster);
             Console.ReadLine();
