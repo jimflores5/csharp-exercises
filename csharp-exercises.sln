@@ -28,13 +28,17 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AreaOfCircle", "AreaOfCircl
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WorkingWithStrings", "WorkingWithStrings\WorkingWithStrings.csproj", "{C44C3B0B-4514-49ED-B71C-4CB653D692B0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ListPractice", "ListPractice\ListPractice.csproj", "{9FFDC644-A2EF-4927-AA9A-F437BFB229FD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ListPractice", "ListPractice\ListPractice.csproj", "{9FFDC644-A2EF-4927-AA9A-F437BFB229FD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MoreStringPractice", "MoreStringPractice\MoreStringPractice.csproj", "{1220212C-81D4-4BC6-9822-907C411E0328}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MoreStringPractice", "MoreStringPractice\MoreStringPractice.csproj", "{1220212C-81D4-4BC6-9822-907C411E0328}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FibNumbers", "FibNumbers\FibNumbers.csproj", "{999F3BD4-6E02-4E2E-B8F2-90F5460460D4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FibNumbers", "FibNumbers\FibNumbers.csproj", "{999F3BD4-6E02-4E2E-B8F2-90F5460460D4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleGradeBook", "ConsoleApp1\SimpleGradeBook.csproj", "{F627148D-839A-4395-ADA5-DD82855AB266}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SimpleGradeBook", "ConsoleApp1\SimpleGradeBook.csproj", "{F627148D-839A-4395-ADA5-DD82855AB266}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LiveCodingExamples", "LiveCodingExamples\LiveCodingExamples.csproj", "{76E383EA-5B6A-4DC1-A007-7CAD9630DC5F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CountingCharacters", "CountingCharacters\CountingCharacters.csproj", "{50AC2674-69AE-4445-98AB-BC61CDDA6732}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -110,6 +114,14 @@ Global
 		{F627148D-839A-4395-ADA5-DD82855AB266}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F627148D-839A-4395-ADA5-DD82855AB266}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F627148D-839A-4395-ADA5-DD82855AB266}.Release|Any CPU.Build.0 = Release|Any CPU
+		{76E383EA-5B6A-4DC1-A007-7CAD9630DC5F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{76E383EA-5B6A-4DC1-A007-7CAD9630DC5F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{76E383EA-5B6A-4DC1-A007-7CAD9630DC5F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{76E383EA-5B6A-4DC1-A007-7CAD9630DC5F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{50AC2674-69AE-4445-98AB-BC61CDDA6732}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{50AC2674-69AE-4445-98AB-BC61CDDA6732}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{50AC2674-69AE-4445-98AB-BC61CDDA6732}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{50AC2674-69AE-4445-98AB-BC61CDDA6732}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
