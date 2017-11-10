@@ -12,7 +12,7 @@ namespace CountingCharacters
                 "Ut at sagittis augue. Praesent quis rhoncus justo. Aliquam erat volutpat. Donec sit amet suscipit metus, non lobortis " +
                 "massa. Vestibulum augue ex, dapibus ac suscipit vel, volutpat eget massa. Donec nec velit non ligula efficitur luctus.";
             string text2 = "BOokkeEper..!";
-            string alphabet = "abcdefghijklmnopqrstuvwxyz";
+            //string alphabet = "abcdefghijklmnopqrstuvwxyz";  <--- Used to check for non-letter characters.
 
             var charCounts = new Dictionary<char, int>();
 
@@ -36,9 +36,9 @@ namespace CountingCharacters
 
             /* foreach (char letter in tempString)
              {
-                 if (alphabet.Contains(letter))    
+                 if (alphabet.Contains(letter))    // ALSO, try if (char.IsLetter(letter))
                  {
-                     if (!charCounts.ContainsKey(letter))    // ALSO, try if (char.IsLetter(letter))
+                     if (!charCounts.ContainsKey(letter))    
                      {
                          charCounts.Add(letter, 1);
                      }
