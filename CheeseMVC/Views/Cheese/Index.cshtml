@@ -3,3 +3,18 @@
 }
 
 <h1>My Cheese!</h1>
+
+@if (ViewBag.cheeses.Count == 0)
+{
+    <p><h2>No cheese yet.  :-(</h2></p>
+
+}
+
+<ul>
+    @foreach (KeyValuePair<string,string> cheese in ViewBag.cheeses)
+    {
+        <li>@cheese.Key: <font color="brown">@cheese.Value</font></li>
+    }
+</ul>
+
+<p><a asp-controller="Cheese" asp-action="Add">Add another cheese</a></p> @*The asp-x syntax relaces href="/Cheese/Add" in the <a> tag.*@
