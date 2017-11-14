@@ -30,21 +30,21 @@ namespace HelloMVC.Controllers
         // /Hello 
         [Route("/Hello")] //This routes the input from Index() through Display(), but the content appears in the /Hello window rather than /Hello/Display.
         [HttpPost]
-        public IActionResult Display(string name, string lang)
+        public IActionResult Display(string name, string lang)  //Could replace the if() check in line 42 by adding a default: Display(string name = "World", string lang).
         {                                   
-            var greetings = new Dictionary<string, string>();
-            greetings.Add("en", "Hello");
+            var greetings = new Dictionary<string, string>(); //The dictionary keys match the values returned from the drop-down language menu.
+            greetings.Add("en", "Hello");                   //The dictionary values provide the different greetings.
             greetings.Add("fr", "Bonjour");
             greetings.Add("sp", "Hola");
             greetings.Add("gr", "Guten tag");
             greetings.Add("tx", "Howdy");
-                                            //Could replace the if() check by adding a default: Index(string name = "World")
-            if (string.IsNullOrEmpty(name)) //Checks to is if there is a name parameter (/Hello/Index?name="blah").
-            {
-                return Content("<h1>" + greetings[lang] + ", World!</h1>", "text/html");  //Content is a method defined in IActionResult.
+                                            
+            if (string.IsNullOrEmpty(name)) //Checks to see if there was a name entered in the form.
+            {                               
+                return Content("<h1>" + greetings[lang] + ", World!</h1>", "text/html");
             }
             else
-            {
+            {                       //By using the dictionary, we can avoid using if/elseif/else or switch statements.
                 return Content(String.Format("<h1>" + greetings[lang] + ", {0}!</h1>", name), "text/html");
             }
         }
