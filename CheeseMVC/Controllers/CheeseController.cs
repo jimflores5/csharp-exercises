@@ -20,6 +20,7 @@ namespace CheeseMVC.Controllers
                             //By passing in the parameter like View("Error"), the program will search the Views folders for the specified filename.
         }
 
+        [HttpGet]
         public IActionResult Add()
         {
 
@@ -31,6 +32,21 @@ namespace CheeseMVC.Controllers
         public IActionResult NewCheese(string name, string info)
         {
             CheeseList.Add(name,info);
+            return Redirect("/Cheese");
+        }
+
+        [HttpGet]
+        public IActionResult Remove()
+        {
+            ViewBag.cheeses = CheeseList;
+            return View();
+        }
+
+        [Route("/Cheese/Remove")]
+        [HttpPost]
+        public IActionResult EatCheese(string eaten)
+        {
+            CheeseList.Remove(eaten);
             return Redirect("/Cheese");
         }
     }
