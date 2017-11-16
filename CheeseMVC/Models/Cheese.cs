@@ -16,10 +16,5 @@ namespace CheeseMVC.Models
             Info = info;
         }
 
-        public Cheese(string name)
-        {
-            Name = name;
-            Info = this.Info;
-        }
     }
 }
