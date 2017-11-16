@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using CheeseMVC.Models;
 
 // For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -10,7 +11,8 @@ namespace CheeseMVC.Controllers
 {
     public class CheeseController : Controller
     {
-        static private Dictionary<string,string> CheeseList = new Dictionary<string,string>();  // 'static' means that the property (CheeseList) is available to all methods inside the CheeseController class.
+        //static private Dictionary<string,string> CheeseList = new Dictionary<string,string>();  // 'static' means that the property (CheeseList) is available to all methods inside the CheeseController class.
+        static private List<Cheese> CheeseList = new List<Cheese>();
 
         public IActionResult Index()
         {
@@ -31,7 +33,10 @@ namespace CheeseMVC.Controllers
         [HttpPost]
         public IActionResult NewCheese(string name, string info)
         {
-            CheeseList.Add(name,info);
+            //CheeseList.Add(name,info);
+            Cheese newCheese = new Cheese(name, info);
+            CheeseList.Add(newCheese);
+
             return Redirect("/Cheese");
         }
 
@@ -46,7 +51,16 @@ namespace CheeseMVC.Controllers
         [HttpPost]
         public IActionResult EatCheese(string eaten)
         {
-            CheeseList.Remove(eaten);
+            //CheeseList.Remove(eaten);
+
+            foreach (Cheese cheese in CheeseList)
+            {
+                if (eaten == cheese.Name)
+                {
+                    CheeseList.Remove(cheese);
+                    break;
+                }
+            }
             return Redirect("/Cheese");
         }
     }

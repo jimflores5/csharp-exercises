@@ -4,17 +4,17 @@
 }
 
 <h2>Remove a cheese:</h2>
-<p>Select the cheese(s) below that have been eaten off the list.</p>
+<p>Select the cheese below that has been eaten off the list.</p>
 <!--<p>Hold down the Ctrl (windows) / Command (Mac) button to select multiple options.</p>-->
 
 <form method="post">
     <select name="eaten">
-        @foreach (KeyValuePair<string, string> cheese in ViewBag.cheeses)
+        @foreach (Cheese cheese in ViewBag.cheeses)
         {
-            <option value="@cheese.Key">@cheese.Key</option>
+            <option value="@cheese.Name">@cheese.Name</option>
         }
     </select>
-    <br/>
+    <br/><br/>
     <input type="submit" value="Remove">
 </form>
 

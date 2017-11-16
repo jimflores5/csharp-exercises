@@ -46,6 +46,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CheeseMVC", "CheeseMVC\Chee
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ClassPractice", "ClassPractice\ClassPractice.csproj", "{AA424CBF-4C13-4A52-A5EA-82D91CCD6023}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "School", "School\School.csproj", "{104737B9-21D3-4750-89E4-9E24040D3BB0}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -140,6 +142,10 @@ Global
 		{AA424CBF-4C13-4A52-A5EA-82D91CCD6023}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AA424CBF-4C13-4A52-A5EA-82D91CCD6023}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AA424CBF-4C13-4A52-A5EA-82D91CCD6023}.Release|Any CPU.Build.0 = Release|Any CPU
+		{104737B9-21D3-4750-89E4-9E24040D3BB0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{104737B9-21D3-4750-89E4-9E24040D3BB0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{104737B9-21D3-4750-89E4-9E24040D3BB0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{104737B9-21D3-4750-89E4-9E24040D3BB0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

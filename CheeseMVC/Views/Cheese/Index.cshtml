@@ -11,9 +11,9 @@
 }
 
 <ul>
-    @foreach (KeyValuePair<string,string> cheese in ViewBag.cheeses)
+    @foreach (Cheese cheese in ViewBag.cheeses)
     {
-        <li>@cheese.Key: <font color="brown">@cheese.Value</font></li>
+        <li>@cheese.Name: <font color="brown">@cheese.Info</font></li>
     }
 </ul>
 
