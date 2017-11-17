@@ -41,17 +41,22 @@ namespace School
 
     public class Course
     {
+        private List<Student> Roster = null;
         public string CourseName { get; set; }
         public int CourseID { get; private set; }
         public int Credits = 3;
-        public Dictionary<string,int> Roster { get; private set; }
 
-        public Course(string courseName, int courseID, string student)
+        public Course(List<Student> roster)
+        {
+            this.Roster = roster;
+        }
+
+        public Course(string courseName, int courseID, List<Student> roster)
         {
             CourseName = courseName;
             CourseID = courseID;
-
-            Dictionary<string, int> Roster = new Dictionary<string, int>();
+            Roster = roster;
         }
+
     }
 }
