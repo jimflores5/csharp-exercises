@@ -7,7 +7,37 @@ namespace Restaurant
     {
         static void Main(string[] args)
         {
-            
+            List<MenuItem> menu = new List<MenuItem>();
+            bool repeat = false;
+
+            for (int x = 0; x < 2; x++)
+            {
+                Console.WriteLine("Time to add a menu item!");
+                Console.ReadLine();
+                MenuItem newFood = AddMenuItem();
+
+                foreach (MenuItem entry in menu)
+                {
+                    if (newFood.Equals(entry))
+                    {
+                        Console.WriteLine("Sorry, " + newFood + " is already on the menu.");
+                        repeat = true;
+                    }
+                }
+                if (!repeat)
+                {
+                    menu.Add(newFood);
+                }   
+            }
+
+            Console.WriteLine("Now let's print the menu...");
+            Console.ReadLine();
+
+            foreach (MenuItem item in menu)
+            {
+                Console.WriteLine(item.Name + ": " + item.Info);
+            }
+            Console.ReadLine();
         }
 
         private static MenuItem AddMenuItem()
@@ -22,7 +52,7 @@ namespace Restaurant
             string price = Console.ReadLine();
             Console.WriteLine("Is {0} an appetizer, main course or dessert?", name);
             string type = Console.ReadLine();
-
+            
             MenuItem newMenuItem = new MenuItem(name, info, price, type, true);
             Console.WriteLine("New menu item added.  Press 'Enter' to continue...");
             Console.ReadLine();
@@ -45,8 +75,8 @@ namespace Restaurant
 
     public class MenuItem
     {
-        string Name { get; set; }
-        string Info { get; set; }
+        public string Name { get; set; }
+        public string Info { get; set; }
         string Price { get; set; }
         string Type { get; set; }
         bool NewItem { get; set; }
@@ -60,6 +90,16 @@ namespace Restaurant
             this.Price = price;
             this.Type = type;
             this.NewItem = newItem;
+        }
+
+        public override bool Equals(Object obj)
+        {
+            if (obj == null) //check for null case
+            {
+                return false;
+            }
+            MenuItem menuItem = (MenuItem)obj;  // cast obj to MenuItem
+            return this.Name == menuItem.Name && this.Type == menuItem.Type; //check for value equality and return a bool.
         }
     }
 }

@@ -1,6 +1,6 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.27004.2008
+VisualStudioVersion = 15.0.27004.2009
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DayPrinter", "DayPrinter\DayPrinter.csproj", "{B3E76AAA-3BE8-49C7-A831-64EF68C6F28D}"
 EndProject
@@ -48,7 +48,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ClassPractice", "ClassPract
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "School", "School\School.csproj", "{104737B9-21D3-4750-89E4-9E24040D3BB0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Restaurant", "Restaurant\Restaurant.csproj", "{46F41B2C-CC0F-45D8-BB29-D192F4702A86}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Restaurant", "Restaurant\Restaurant.csproj", "{46F41B2C-CC0F-45D8-BB29-D192F4702A86}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CarObjectDemo", "CarObjectDemo\CarObjectDemo.csproj", "{6403B59D-28B3-40E8-A3B1-4EE82C9365F3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuizGenerator", "QuizGenerator\QuizGenerator.csproj", "{4C05607D-4013-4D09-AD04-A7469A7929CD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -152,6 +156,14 @@ Global
 		{46F41B2C-CC0F-45D8-BB29-D192F4702A86}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{46F41B2C-CC0F-45D8-BB29-D192F4702A86}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{46F41B2C-CC0F-45D8-BB29-D192F4702A86}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6403B59D-28B3-40E8-A3B1-4EE82C9365F3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6403B59D-28B3-40E8-A3B1-4EE82C9365F3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6403B59D-28B3-40E8-A3B1-4EE82C9365F3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6403B59D-28B3-40E8-A3B1-4EE82C9365F3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4C05607D-4013-4D09-AD04-A7469A7929CD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4C05607D-4013-4D09-AD04-A7469A7929CD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4C05607D-4013-4D09-AD04-A7469A7929CD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4C05607D-4013-4D09-AD04-A7469A7929CD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
