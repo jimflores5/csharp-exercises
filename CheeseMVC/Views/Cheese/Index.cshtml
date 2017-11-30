@@ -6,9 +6,11 @@
 
 }
 
-<table class="table">
+
+<table class="table" style="width:750px">
 
     <tr>
+        <th>Edit</th>
         <th>Name</th>
         <th>Description</th>
     </tr>
@@ -16,11 +18,13 @@
     @foreach (Cheese cheese in ViewBag.cheeses)
     {
         <tr>
+            <td><a asp-controller="Cheese" asp-action="Edit" asp-route-cheeseId="@cheese.CheeseId">Edit</a></td>
             <td>@cheese.Name</td>
             <td>@cheese.Info</td>
         </tr>
     }
 </table>
+
 
 <p><a asp-controller="Cheese" asp-action="Add">Add another cheese</a></p> @*The asp-x syntax relaces href="/Cheese/Add" in the <a> tag.*@
 <p><a asp-controller="Cheese" asp-action="Remove">Remove a cheese</a></p>

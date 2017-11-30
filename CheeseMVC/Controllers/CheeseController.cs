@@ -60,5 +60,20 @@ namespace CheeseMVC.Controllers
    
             return Redirect("/");
         }
+
+        public IActionResult Edit(int cheeseId)
+        {
+            ViewBag.editCheese = CheeseData.GetById(cheeseId);
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult Edit(int cheeseId, string name, string info)
+        {
+            Cheese changedCheese = CheeseData.GetById(cheeseId);
+            changedCheese.Name = name;
+            changedCheese.Info = info;
+            return Redirect("/");
+        }
     }
 }
