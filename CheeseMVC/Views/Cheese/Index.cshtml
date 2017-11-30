@@ -1,8 +1,4 @@
-﻿@{
-    Layout = null;
-}
-
-<h1>My Cheese!</h1>
+﻿<h1>My Cheese!</h1>
 
 @if (ViewBag.cheeses.Count == 0)
 {
@@ -10,12 +6,21 @@
 
 }
 
-<ul>
+<table class="table">
+
+    <tr>
+        <th>Name</th>
+        <th>Description</th>
+    </tr>
+
     @foreach (Cheese cheese in ViewBag.cheeses)
     {
-        <li>@cheese.Name: <font color="brown">@cheese.Info</font></li>
+        <tr>
+            <td>@cheese.Name</td>
+            <td>@cheese.Info</td>
+        </tr>
     }
-</ul>
+</table>
 
 <p><a asp-controller="Cheese" asp-action="Add">Add another cheese</a></p> @*The asp-x syntax relaces href="/Cheese/Add" in the <a> tag.*@
 <p><a asp-controller="Cheese" asp-action="Remove">Remove a cheese</a></p>

@@ -1,0 +1,11 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<p>Select a practice task:</p>
+<ul>
+    @foreach (KeyValuePair<string, string> action in ViewBag.actions)
+    {
+        <li><a href="/@action.Key">@action.Value</a></li>
+    }
+</ul>

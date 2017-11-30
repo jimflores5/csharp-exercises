@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace CheeseMVC
+namespace SigFigsWeb
 {
     public class Startup
     {
@@ -43,7 +43,7 @@ namespace CheeseMVC
             {
                 routes.MapRoute(
                     name: "default",
-                    template: "{controller=Cheese}/{action=Index}/{id?}");
+                    template: "{controller=Home}/{action=Index}/{id?}");
             });
         }
     }

@@ -12,11 +12,13 @@ namespace CheeseMVC.Controllers
     public class CheeseController : Controller
     {
         //static private Dictionary<string,string> CheeseList = new Dictionary<string,string>();  // 'static' means that the property (CheeseList) is available to all methods inside the CheeseController class.
-        static private List<Cheese> CheeseList = new List<Cheese>();
+        //static private List<Cheese> CheeseList = new List<Cheese>();
+        //These collection definitions were moved to the CheeseData model, which also contains all the data management functionality.
+        //Data stuff goes in the MODEL, not the CONTROLLER.
 
         public IActionResult Index()
         {
-            ViewBag.cheeses = CheeseList;
+            ViewBag.cheeses = CheeseData.GetAll();
 
             return View();  //View() tells the program to search the Views/Cheese and Views/Shared folders for a template called "Index.cshtml".
                             //By passing in the parameter like View("Error"), the program will search the Views folders for the specified filename.
@@ -25,43 +27,38 @@ namespace CheeseMVC.Controllers
         [HttpGet]
         public IActionResult Add()
         {
-
             return View();
         }
 
         [Route("/Cheese/Add")]
         [HttpPost]
-        public IActionResult NewCheese(string name, string info)
+        public IActionResult NewCheese(Cheese newCheese) //Model binding occurs here.  Instead of fetching 'name' and 'info' strings from the post request and creating a new Cheese object, the program does this automatically.
         {
-            //CheeseList.Add(name,info);
-            Cheese newCheese = new Cheese(name, info);
-            CheeseList.Add(newCheese);
+            //Cheese newCheese = new Cheese(name, info); Replaced by model binding.
+            CheeseData.Add(newCheese);
 
             return Redirect("/Cheese");
         }
 
+
         [HttpGet]
         public IActionResult Remove()
         {
-            ViewBag.cheeses = CheeseList;
+            ViewBag.title = "Remove a cheese...";
+            ViewBag.cheeses = CheeseData.GetAll();
             return View();
         }
 
         [Route("/Cheese/Remove")]
         [HttpPost]
-        public IActionResult EatCheese(string eaten)
+        public IActionResult EatCheese(int[] cheeseIds) //Receives an array of ID integers from the Remove view form (checkboxes).
         {
-            //CheeseList.Remove(eaten);
-
-            foreach (Cheese cheese in CheeseList)
+            foreach (int cheeseId in cheeseIds)
             {
-                if (eaten == cheese.Name)
-                {
-                    CheeseList.Remove(cheese);
-                    break;
-                }
+                CheeseData.Remove(cheeseId);
             }
-            return Redirect("/Cheese");
+   
+            return Redirect("/");
         }
     }
 }
