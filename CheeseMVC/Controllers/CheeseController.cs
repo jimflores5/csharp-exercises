@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using CheeseMVC.Models;
+using CheeseMVC.ViewModels;
 
 // For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -18,26 +19,40 @@ namespace CheeseMVC.Controllers
 
         public IActionResult Index()
         {
-            ViewBag.cheeses = CheeseData.GetAll();
+            //ViewBag.cheeses = CheeseData.GetAll(); <-- Original statement for passing data into the Index View() template.
+            List<Cheese> cheeses = CheeseData.GetAll();
 
-            return View();  //View() tells the program to search the Views/Cheese and Views/Shared folders for a template called "Index.cshtml".
+            return View(cheeses);  //View() tells the program to search the Views/Cheese and Views/Shared folders for a template called "Index.cshtml".
                             //By passing in the parameter like View("Error"), the program will search the Views folders for the specified filename.
+                            //Using View(cheeses) passes the 'cheeses' list into the View template.  Note that you can only pass ONE object into the View().
         }
 
         [HttpGet]
         public IActionResult Add()
         {
-            return View();
+            AddCheeseViewModel newCheese = new AddCheeseViewModel();
+            return View(newCheese);
         }
 
-        [Route("/Cheese/Add")]
         [HttpPost]
-        public IActionResult NewCheese(Cheese newCheese) //Model binding occurs here.  Instead of fetching 'name' and 'info' strings from the post request and creating a new Cheese object, the program does this automatically.
+        public IActionResult Add(AddCheeseViewModel addCheeseViewModel)
         {
             //Cheese newCheese = new Cheese(name, info); Replaced by model binding.
-            CheeseData.Add(newCheese);
+            //public IActionResult Add(Cheese newCheese) <--Model binding occurs here.  Instead of fetching 'name' and 'info' strings from the post request and creating a new Cheese object, the program does this automatically.
 
-            return Redirect("/Cheese");
+            if (ModelState.IsValid)
+            {
+                Cheese newCheese = new Cheese
+                {
+                    Name = addCheeseViewModel.Name,
+                    Info = addCheeseViewModel.Info
+                };
+
+                CheeseData.Add(newCheese);
+
+                return Redirect("/Cheese");
+            }
+            return View(addCheeseViewModel);
         }
 
 

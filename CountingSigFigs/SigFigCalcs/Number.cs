@@ -1,12 +1,32 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
+using System.Text;
 
-namespace CountingSigFigs
+namespace SigFigCalcs
 {
-    class Program
+    class Number
     {
-        static public string MakeNumber (int sigFigs, int power)
+        public int SigFigs { get; set; }
+        public string Value { get; set; }
+
+        public Number (int sigFigs, string value)
+        {
+            SigFigs = sigFigs;
+            Value = value;
+        }
+
+        public Number(int sigFigs, int power)
+        {
+            SigFigs = sigFigs;
+            Value = MakeNumber(sigFigs, power);
+        }
+
+        public override string ToString()
+        {
+            return this.Value;
+        }
+
+        static public string MakeNumber(int sigFigs, int power)
         {
             List<string> firstDigit = new List<string> { "1", "2", "3", "4", "5", "6", "7", "8", "9" };
             List<string> allDigits = new List<string> { "0", "1", "2", "3", "4", "5", "6", "7", "8", "9" };
@@ -68,32 +88,6 @@ namespace CountingSigFigs
 
                 return value;
             }
-        }
-
-        static void Main(string[] args)
-        {
-            Random rnd = new Random();
-            string value;
-
-            for (int x = 0; x < 4; x++)
-            {
-                int sigFigs = rnd.Next(1, 7);
-                int power = rnd.Next(-5, 9);
-                value = MakeNumber(sigFigs, power);
-
-                Console.WriteLine("ID the number of sig figs in: {0}", value);
-                int answer = int.Parse(Console.ReadLine());
-                if (answer == sigFigs)
-                {
-                    Console.WriteLine("CORRECT!  :-)");
-                }
-                else
-                {
-                    Console.WriteLine("Sorry, the value {0} has {1} sig figs.", value, sigFigs);
-                }
-            }
-
-            Console.ReadLine();
         }
     }
 }

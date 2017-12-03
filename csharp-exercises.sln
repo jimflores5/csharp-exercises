@@ -1,6 +1,6 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.27004.2009
+VisualStudioVersion = 15.0.27004.2010
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DayPrinter", "DayPrinter\DayPrinter.csproj", "{B3E76AAA-3BE8-49C7-A831-64EF68C6F28D}"
 EndProject
@@ -52,7 +52,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Restaurant", "Restaurant\Re
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CarObjectDemo", "CarObjectDemo\CarObjectDemo.csproj", "{6403B59D-28B3-40E8-A3B1-4EE82C9365F3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuizGenerator", "QuizGenerator\QuizGenerator.csproj", "{4C05607D-4013-4D09-AD04-A7469A7929CD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "QuizGenerator", "QuizGenerator\QuizGenerator.csproj", "{4C05607D-4013-4D09-AD04-A7469A7929CD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
