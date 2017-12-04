@@ -5,23 +5,51 @@
 
 <h2>Register</h2>
 
-<form method="post">
+@if (ViewBag.error == null)
+{
+    <form method="post">
 
-    <div class="form-group">
+        <div class="form-group">
 
-        <label for="username">Username:</label>
-        <input class="form-control" name="username" id="username" type="text" style="width:200px" /><br/>
+            <label for="username">Username:</label>
+            <input class="form-control" name="username" id="username" type="text" style="width:200px" /><br />
 
-        <label for="email">e-mail: </label>
-        <input class="form-control" name="email" id="email" type="email" style="width:200px"/><br />
+            <label for="email">e-mail: </label>
+            <input class="form-control" name="email" id="email" type="email" style="width:200px" /><br />
 
-        <label for="password">Password: </label>
-        <input class="form-control" name="password" id="password" type="password" style="width:200px" /><br />
+            <label for="password">Password: </label>
+            <input class="form-control" name="password" id="password" type="password" style="width:200px" /><br />
 
-        <label for="verify">Verify password: </label>
-        <input class="form-control" name="verify" id="verify" type="password" style="width:200px" /><br />
-    </div>
+            <label for="verify">Verify password: </label>
+            <input class="form-control" name="verify" id="verify" type="password" style="width:200px" /><br />
+        </div>
 
-    <input type="submit" value="Register" />
+        <input type="submit" value="Register" />
 
-</form>
+    </form>
+}
+else
+{
+    <form method="post">
+
+        <div class="form-group">
+
+            <label for="username">Username:</label>
+            <input class="form-control" name="username" id="username" type="text" value ="@ViewBag.oops.Username" style="width:200px" /><br />
+
+            <label for="email">e-mail: </label>
+            <input class="form-control" name="email" id="email" type="email" value ="@ViewBag.oops.Email" style="width:200px" /><br />
+
+            <label for="password">Password: </label>
+            <input class="form-control" name="password" id="password" type="password" style="width:200px" /><br />
+
+            <label for="verify">Verify password: </label>
+            <input class="form-control" name="verify" id="verify" type="password" style="width:200px" /><br />
+            <p color="red">@ViewBag.error</p>
+
+        </div>
+
+        <input type="submit" value="Register" />
+
+    </form>
+}

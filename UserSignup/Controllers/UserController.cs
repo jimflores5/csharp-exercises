@@ -36,7 +36,7 @@ namespace UserSignup.Controllers
                 ViewBag.oops = newUser;
                 ViewBag.error = "Passwords do not match.";
             }
-            return Redirect("/Add");
+            return View();
         }
     }
 }
