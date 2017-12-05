@@ -17,6 +17,7 @@
         <th>Name</th>
         <th>Description</th>
         <th>Type</th>
+        <th>Rating</th>
     </tr>
 
     @foreach (Cheese cheese in Model)
@@ -26,6 +27,7 @@
             <td>@cheese.Name</td>
             <td>@cheese.Info</td>
             <td>@cheese.Type</td>
+            <td>@cheese.Rating</td>
         </tr>
     }
 </table>

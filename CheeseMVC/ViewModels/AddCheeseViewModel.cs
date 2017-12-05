@@ -17,13 +17,18 @@ namespace CheeseMVC.ViewModels
         [Required(ErrorMessage ="Please enter a description for the cheese.")]
         public string Info { get; set; }
 
+        public int CheeseId { get; set; }
+
+        [Range(1, 5)]
+        public int Rating { get; set; }
+
         public CheeseType Type { get; set; }
 
         public List<SelectListItem> CheeseTypes { get; set; }
 
         public AddCheeseViewModel()
         {
-            CheeseTypes = new List<SelectListItem>();
+            CheeseTypes = new List<SelectListItem>();                
             
             CheeseTypes.Add(new SelectListItem //Create drop-down list options for the 3 types of cheese.
             {
@@ -42,6 +47,19 @@ namespace CheeseMVC.ViewModels
                 Value = ((int)CheeseType.Fake).ToString(),
                 Text = CheeseType.Fake.ToString()
             });
+        }
+
+        public Cheese CreateCheese(AddCheeseViewModel addCheeseViewModel)
+        {
+            Cheese newCheese = new Cheese
+            {
+                Name = addCheeseViewModel.Name,
+                Info = addCheeseViewModel.Info,
+                Type = addCheeseViewModel.Type,
+                Rating = addCheeseViewModel.Rating
+            };
+
+            return newCheese;
         }
     }
 }

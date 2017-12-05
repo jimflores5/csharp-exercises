@@ -10,6 +10,7 @@ namespace CheeseMVC.Models
         public string Name { get; set; }
         public string Info { get; set; }
         public CheeseType Type { get; set; }
+        public int Rating { get; set; }
         public int CheeseId { get; set; }
         private static int nextId = 1;
 
@@ -19,10 +20,11 @@ namespace CheeseMVC.Models
             nextId++;
         }
 
-        public Cheese(string name, string info)
+        public Cheese(string name, string info, int rating)
         {
             Name = name;
             Info = info;
+            Rating = rating;
             CheeseId = nextId;
             nextId++;
         }
